@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="game.css">
+    <style>
+    
+        
+        .container {
+            max-width: 600px;
+            background:transparent;
+            padding: 25px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            height: 120px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #382afd;
+            border: none;
+            color: white;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #99c4f1;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+      @media (max-width: 768px) {
+            .container {
+                max-width: 90%;
+                padding: 15px;
+            }
+            input, textarea, button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                max-width: 95%;
+                padding: 12px;
+                box-shadow: none;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            input, textarea, button {
+                font-size: 13px;
+                padding: 7px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop id="myvideo">
+  <source src="videos/smoke.mp4" type="video/mp4">
+    </video>
+
+<header class="loo">
+    <div class="menu-wrapper">
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+      <nav class="menu" id="menu">
+        <a class="menu-item" href="HOME.html" target="_blank">Home</a>
+        <a class="menu-item" href="CONTACT.html" target="_blank">Contact</a>
+        <a class="menu-item" href="ABOUT US.html" target="_blank">About us</a>
+        <a class="menu-item" href="HELP.html" target="_blank">Help</a>
+      </nav>
+    </div>
+
+    <div class="nav-title">WELCOME TO GAME-ERA</div>
+  </header>
+    <div class="container blur animate-on-scroll">
+        <h2>Contact Us</h2>
+        <form action="#" method="post">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject">
+
+            <label for="feedback">Your Message / Feedback:</label>
+            <textarea id="feedback" name="feedback" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+ 
+<script src="java.js"></script>
+</body>
+
+<footer>
+  <div class="mo ">
+    <ul>
+      <li class="button"><a href="HOME.html">Home</a></li>
+      <li class="button"><a href="ABOUT US.html">About us</a></li>
+      <li class="button" zz><a href="CONTACT.html">Contact Us</a></li>
+      <li class="button"><a href="HELP.html">Help</a></li>
+    </ul>
+  </div>
+  &copy; 2025 Game-Era. All rights reserved.
+</footer>
+
+</html>

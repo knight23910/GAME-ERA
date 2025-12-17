@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Game Download</title>
+  <link rel="stylesheet" href="game.css" />
+</head>
+<body>
+  <img class="back" src="images/black.jpg" alt="">
+
+  <div class="animate-on-scroll mar">
+    <h1 id="gameTitle"></h1>
+  </div>
+<br>
+<br>
+  <div class="animate-on-scroll">
+    <div class="slider-container">
+      <div class="slider" id="sliderImages"></div>
+    </div>
+  </div>
+
+  <div class="animate-on-scroll blur">
+    <h1 id="downloadTitle"></h1>
+    <p id="gameDescription"></p>
+  </div>
+<br>
+<br>
+
+  <div class="animate-on-scroll blur">
+    <h1>SYSTEM REQUIREMENTS</h1>
+    <ul id="sysReq"></ul>
+  </div>
+<br>
+<br>
+
+  <div class="animate-on-scroll blur">
+    <h1>GAME INFO</h1>
+    <ul id="gameInfo"></ul>
+  </div>
+<br>
+<br>
+
+  <div class="animate-on-scroll blur">
+    <h1>APPLICATION DETAILS</h1>
+    <ul id="appDetails"></ul>
+  </div>
+<br>
+<br>
+
+  <div class="animate-on-scroll download">
+    <a id="downloadLink" style="color: white;" href="#">Click here to Download</a>
+  </div>
+<br>
+<br>
+
+  <div class="install-guide blur animate-on-scroll">
+    <h2>🖥️ How to Install</h2>
+    <h3>Step 1: Download the Game File</h3>
+    <p>Go to the game page and click the "Download" button for the game you want.</p>
+    <h3>Step 2: Locate the Downloaded File</h3>
+    <p>After downloading, find the .zip or .exe file in your Downloads folder.</p>
+    <h3>Step 3: Extract (if needed)</h3>
+    <p>If it's a .zip, right-click and choose “Extract All”.</p>
+    <h3>Step 4: Run the Installer</h3>
+    <p>Double-click Setup.exe to start installation.</p>
+    <h3>Step 5: Follow Prompts</h3>
+    <p>Choose install location and wait for it to finish.</p>
+    <h3>Step 6: Launch the Game</h3>
+    <p>Open the game from your desktop or Start menu.</p>
+  </div>
+
+  <script src="java.js"></script>
+  <script>
+  // java.js
+const params = new URLSearchParams(window.location.search);
+const gameId = params.get("id");
+
+fetch("data/games.json")
+  .then(res => res.json())
+  .then(data => {
+    const game = data[gameId];
+    if (!game) {
+      document.body.innerHTML = "<h2 style='color:white;text-align:center'>Game not found!</h2>";
+      return;
+    }
+
+    document.title = `${game.title} Download Page`;
+    document.getElementById("pageTitle").textContent = game.title;
+    document.getElementById("gameTitle").textContent = game.title;
+    document.getElementById("downloadTitle").textContent = `${game.title} Free Download Directly`;
+    document.getElementById("gameDescription").textContent = game.description;
+
+    // Slider images
+    const slider = document.getElementById("sliderImages");
+    game.sliderImages.forEach(img => {
+      const el = document.createElement("img");
+      el.src = img;
+      el.alt = game.title;
+      slider.appendChild(el);
+    });
+
+    // System requirements
+    const sysReq = document.getElementById("sysReq");
+    for (const [key, val] of Object.entries(game.systemRequirements)) {
+      const li = document.createElement("li");
+      li.textContent = `${key}: ${val}`;
+      sysReq.appendChild(li);
+    }
+
+    // Game Info
+    const infoList = document.getElementById("gameInfo");
+    for (const [key, val] of Object.entries(game.gameInfo)) {
+      const li = document.createElement("li");
+      li.textContent = `${key}: ${val}`;
+      infoList.appendChild(li);
+    }
+
+    // Application Details
+    const appList = document.getElementById("appDetails");
+    for (const [key, val] of Object.entries(game.applicationDetails)) {
+      const li = document.createElement("li");
+      li.textContent = `${key}: ${val}`;
+      appList.appendChild(li);
+    }
+
+    // Download link
+    document.getElementById("downloadLink").href = game.downloadLink;
+  })
+  .catch(err => console.error("Error loading game data:", err));
+  </script>
+</body>
+<footer>
+  <div class="mo">
+    <ul>
+      <li class="button"><a href="HOME.html">Home</a></li>
+      <li class="button"><a href="ABOUT US.html">About us</a></li>
+      <li class="button"><a href="CONTACT.html">Contact Us</a></li>
+      <li class="button"><a href="HELP.html">Help</a></li>
+    </ul>
+  </div>
+  &copy; 2025 Game-Era. All rights reserved.
+</footer>
+</html>
