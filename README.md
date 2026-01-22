@@ -13,15 +13,4 @@ Built with **HTML, CSS, and JavaScript**, it focuses on **user experience and re
 
 ---
 
-## 📁 Project Structure
 
-```text
-📁 GameEra/
-│
-├── index.html           # Main landing page
-├── style.css            # CSS styles
-├── script.js            # JavaScript functionality
-├── assets/              # Images and icons
-│   ├── images/
-│   └── icons/
-└── README.md            # Project documentation
