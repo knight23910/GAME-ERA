@@ -12,6 +12,6 @@
 Built with **HTML, CSS, and JavaScript**, it focuses on **user experience and responsive design**.
 
 ---
-#Frontend design with modern effects
+
 
 
