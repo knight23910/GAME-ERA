@@ -11,6 +11,8 @@
 **Game Era** is a clean and responsive frontend website where users can explore the latest games, read reviews, and stay updated with gaming news.  
 Built with **HTML, CSS, and JavaScript**, it focuses on **user experience and responsive design**.
 
+for download  pc games
+
 ---
 
 
