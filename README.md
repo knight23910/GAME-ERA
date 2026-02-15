@@ -1,4 +1,4 @@
-# 🎮 Game Era hfdyg
+# 🎮 Game Era
 
 [![Website](https://img.shields.io/badge/Website-Live-green)](https://yourwebsite.com)
 [![HTML](https://img.shields.io/badge/HTML5-orange)](https://developer.mozilla.org/en-US/docs/Web/HTML)
